@@ -3,23 +3,20 @@
 [ext_resource type="Shader" path="res://Planet.gdshader" id="1_ubc2s"]
 [ext_resource type="Script" path="res://canvas.gd" id="2_3pyag"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ackhl"]
-seed = 11
-frequency = 0.0558
-offset = Vector3(-34.14, 0, 0)
-fractal_octaves = 3
-fractal_weighted_strength = 1.0
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0bp8w"]
+seed = 7
+frequency = 0.0406
+fractal_octaves = 2
+domain_warp_frequency = 1.245
 
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_st3hr"]
-width = 128
-height = 128
-depth = 128
-noise = SubResource("FastNoiseLite_ackhl")
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_oxmcw"]
+noise = SubResource("FastNoiseLite_0bp8w")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_povqg"]
 shader = ExtResource("1_ubc2s")
-shader_parameter/angle = 2.83
-shader_parameter/noise = SubResource("NoiseTexture3D_st3hr")
+shader_parameter/angle = 0.0
+shader_parameter/zoom = 1.0
+shader_parameter/noise = SubResource("NoiseTexture3D_oxmcw")
 
 [node name="Node2D" type="Node2D"]
 top_level = true
